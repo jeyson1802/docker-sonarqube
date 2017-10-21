@@ -39,6 +39,6 @@ volumes:
   sonarqube_data:  
   sonarqube_tmp:
   sonarqube_extensions:
-  onarqube_bundled-plugins:
+  sonarqube_bundled-plugins:
   postgresql:
   postgresql_data:
