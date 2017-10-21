@@ -19,7 +19,7 @@ services:
 
 
  db:
-  image : postgres
+  image: postgres
   networks:
      - sonarnet
   enviroment:
@@ -28,7 +28,7 @@ services:
   volumes:
      - postgresql: /var/lib/postgresql
      - postgresql_data: /var/lib/postgresql/data
-   restart: always
+  restart: always
         
 networks:
   sonarnet:
