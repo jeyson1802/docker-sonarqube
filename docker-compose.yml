@@ -29,7 +29,19 @@ services:
      - postgresql:/var/lib/postgresql
      - postgresql_data:/var/lib/postgresql/data
   restart: always
-        
+  
+ sonar-scanner:
+  build: ./sonar-scanner
+  networks:
+    - sonarnet
+  depends_on:
+    - sonarqube
+  environment:
+   - SONAR_HOST_URL=http://sonarqube:9000
+   - SONAR_PROJECT_KEY=project:renta2017
+   - SONAR_PROJECT_NAME=Renta2017
+   - SONAR_PROJECT_VERSION=1.0
+   
 networks:
   sonarnet:
     driver: bridge
